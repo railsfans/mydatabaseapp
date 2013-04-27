@@ -1,0 +1,39 @@
+<h1>Listing boys</h1>
+<p>
+  Download:
+  <%= link_to "CSV", boys_path(format: "csv") %> |
+  <%= link_to "Excel", boys_path(format: "xls") %>
+</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>age</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boys.each do |boy| %>
+  <tr>
+    <td><%= boy.name %></td>
+    <td><%= boy.email %></td>
+    <td><%= boy.age %></td>
+    <td><%= link_to 'Show', boy %></td>
+    <td><%= link_to 'Edit', edit_boy_path(boy) %></td>
+    <td><%= link_to 'Destroy', boy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boy', new_boy_path %>
+
+<p><%= link_to "Import products", new_boy_import_path %></p>
+
+<h2>Import Products</h2>
+<%= form_tag import_boys_path, multipart: true do %>
+  <%= file_field_tag :file %><br /><h2>number</h2>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Import" %>
+<% end %>

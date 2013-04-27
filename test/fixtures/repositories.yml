@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  itemNo: 1
+  partName: MyString
+  partRef: MyString
+  footprint: MyString
+  manufacturer: MyString
+  quantity: 1
+  unitprice: 1.5
+  totalprice: 1.5
+  supplier_id: 1
+  comment: MyString
+
+two:
+  itemNo: 1
+  partName: MyString
+  partRef: MyString
+  footprint: MyString
+  manufacturer: MyString
+  quantity: 1
+  unitprice: 1.5
+  totalprice: 1.5
+  supplier_id: 1
+  comment: MyString

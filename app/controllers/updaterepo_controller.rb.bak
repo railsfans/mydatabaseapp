@@ -1,0 +1,15 @@
+class UpdaterepoController < ApplicationController
+ def new
+    @boy_import = Updaterepo.new
+  end
+
+  def create
+    @boy_import = Updaterepo.new(params[:updaterepo])
+    if @boy_import.save
+      redirect_to root_url, notice: "Imported boys successfully."
+    else
+      render :new
+    end
+  end
+
+end

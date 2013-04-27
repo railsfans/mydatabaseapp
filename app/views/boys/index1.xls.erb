@@ -1,0 +1,15 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <% @boys.each do |boy| %>
+  <tr>
+    <td><%= boy.id %></td>
+    <td><%= boy.name %></td>
+    <td><%= boy.email %></td>
+  </tr>
+  <% end %>
+</table>
+

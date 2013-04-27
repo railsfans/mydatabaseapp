@@ -1,0 +1,32 @@
+ <%= link_to "Excel", repository_index_path(format: "xls") %>
+<h2>Import Products</h2>
+<%= form_tag import_repository_index_path, multipart: true do %>
+  <%= file_field_tag :file %><br /><h2>number</h2>
+  <%= text_field_tag :search, params[:search] %><br />
+  <%= submit_tag "Import" %>
+<% end %>
+<p><%= link_to "Import products", new_boy_import_path %></p>
+<h2>list repository</h2>
+<table>
+  <tr>
+    <th>itemNo</th>
+    <th>partName</th>
+    <th>partRef</th>
+    <th>footprint</th>
+    <th>manufacturer</th>
+    <th>quantity</th>
+  </tr>
+<% for repo in @repositorys %>
+<tr>
+<td><%= repo.itemNo %></td>
+<td><%= repo.partName %></td>
+<td><%= repo.partRef %></td>
+<td><%= repo.footprint %></td>
+<td><%= repo.manufacturer %></td>
+<td><%= repo.quantity %></td>
+<td><%= link_to 'Show', repo %></td>
+<td><%= link_to 'Edit', edit_repository_path(repo) %></td>
+<td><%= link_to 'Destroy', repo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</table>
