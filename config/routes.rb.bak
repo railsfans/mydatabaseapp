@@ -6,9 +6,7 @@ Hello::Application.routes.draw do
    	collection { post :import }
   end
 #  resources :boys
-  resources :updaterepo do
-  	collection { post :import }
-  end
+  resources :updaterepos
 
   resources :boys
   resources :boy_imports

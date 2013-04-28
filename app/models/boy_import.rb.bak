@@ -42,7 +42,7 @@ class BoyImport
       if row.to_hash['sitution']=='add'
       boy.quantity=(boy.quantity.to_i+row.to_hash['quantity'].to_i).to_s
       else 
-      boy.quantity=row.to_hash['quantity']
+      boy.quantity=(boy.quantity.to_i-row.to_hash['quantity'].to_i).to_s
       end
       boy
     end

@@ -21,7 +21,7 @@ class BoyImport
     else
       imported_boys.each_with_index do |boy, index|
         boy.errors.full_messages.each do |message|
-          errors.add :base, "Row #{index+2}: #{message}"
+          errors.add :base, "Row #{index+5}: #{message}"
         end
       end
       false

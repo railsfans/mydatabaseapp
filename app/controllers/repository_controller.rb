@@ -1,6 +1,6 @@
 class RepositoryController < ApplicationController
   def index
-   @repositorys = Repository.order("itemNo").all
+   @repositorys = Repository.paginate( :page=>params[:page], :per_page=>10).order("itemNo").all
   
     respond_to do |format|
       format.html # index.html.erb

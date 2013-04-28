@@ -66,7 +66,7 @@ def self.import(file, number)
 				    row = Hash[[header, spreadsheet.row(i)].transpose]
 				    if find_by_itemNo(row["itemNo"])
 				    boy=find_by_itemNo(row["itemNo"])
-				    come(row.to_hash['quantity'], boy.quantity.to_i-row.to_hash['quantity'].to_i*number.to_i)
+				    come(row.to_hash['itemNo'].to_i.to_s, boy.quantity.to_i-row.to_hash['quantity'].to_i*number.to_i)
 				    end
 				  end
 				 

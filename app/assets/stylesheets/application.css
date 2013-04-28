@@ -11,3 +11,31 @@
  *= require_self
  *= require_tree .
  */
+table.admintable {
+border:1px solid #AEDEF2;
+border-collapse: collapse;
+}
+
+th.adminth {
+width: 671px;
+color: #0066cc;
+background-color: #eef6fe;
+font-size:14px;
+color:#05B;
+border:1px solid #AEDEF2;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#AEDEF2,endColorStr=ghostwhite);
+}
+
+td.admincls0 {
+border:1px solid #AEDEF2;
+background:ghostwhite;
+font-size:12px;
+color: #333;
+}
+
+td.admincls1 {
+border:1px solid #AEDEF2;
+background:#DAF0F1;
+font-size:12px;
+color: #333;
+}

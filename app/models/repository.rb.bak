@@ -2,7 +2,7 @@ class Repository < ActiveRecord::Base
   attr_accessible :comment, :footprint, :itemNo, :manufacturer, :partName, :partRef, :quantity, :supplier_id, :totalprice, :unitprice
   belongs_to :supplier
   validates_presence_of :itemNo
-  validates_numericality_of :quantity, :greater_or_equal_than=>0
+  validates_numericality_of :quantity, :greater_than=>0
 # import material
    def self.update(file)
    spreadsheet = open_spreadsheet(file)
@@ -66,7 +66,7 @@ def self.import(file, number)
 				    row = Hash[[header, spreadsheet.row(i)].transpose]
 				    if find_by_itemNo(row["itemNo"])
 				    boy=find_by_itemNo(row["itemNo"])
-				    come(row.to_hash['quantity'], boy.quantity.to_i-row.to_hash['quantity'].to_i*number.to_i)
+				    come(row.to_hash['itemNo'].to_i, boy.quantity.to_i-row.to_hash['quantity'].to_i*number.to_i)
 				    end
 				  end
 				 
